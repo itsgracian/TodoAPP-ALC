@@ -1,31 +1,58 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="App">
   <div class="App-todos-left">
-    <img alt="Angular Logo" src="assets/images/logo-andela.png" class="logo">
+    <img alt="Angular Logo" src="assets/images/logo-andela.png" class="logo" />
     <div class="intro">
       <h2>{{ title }}</h2>
       <h3>We have got you covered.</h3>
       <h5>Add Your todo down below.</h5>
     </div>
     <div class="App-inputs">
-      <form class="App-form">
+      <form
+        class="App-form"
+        (submit)="OnSubmit(submitTodos)"
+        #submitTodos="ngForm"
+      >
         <div class="form-inputs">
-          <input type="text" class="input-control" placeholder="add your todo on list">
+          <input
+            type="text"
+            class="input-control"
+            placeholder="add your todo on list"
+            name="todo"
+            ngModel
+            #todo="ngModel"
+            minlength="4"
+            required
+          />
+          <div *ngIf="todo.touched && !todo.valid" class="display-error">
+            <span class="text-danger" *ngIf="todo.errors.required"> todos is required. </span>
+            <span class="text-danger" *ngIf="todo.errors.minlength">
+            todos must be more than {{todo.errors.minlength.requiredLength}}. </span>
+          </div>
         </div>
         <div class="form-inputs">
-          <input type="submit" class="btn-submit" value="Save to the List">
+          <input
+            type="submit"
+            class="btn-submit"
+            value="Save to the List"
+            [disabled]="!submitTodos.form.valid"
+          />
         </div>
       </form>
     </div>
   </div>
   <div class="App-todos-right">
-    <div class="Todos-display">
-      <h2>Todos List</h2>
+    <div *ngIf="store.length === 0" class="not-found-todo">
+      <img src="../../assets/images/thinking.png" class="not-available">
+     <h3>Todos not available.</h3>
+    </div>
+    <div class="Todos-display" *ngIf="store.length > 0">
+      <h2>-> Todos List</h2>
       <div class="lists">
-        <div class="list">
-          <h3>Visiting My Family</h3>
-          <div class="todo-actions">
-           <div>X</div>
+        <div class="list" *ngFor="let todo of store">
+          <h3>{{todo.todo}}</h3>
+          <div class="todo-actions" (click)="OnDelete(todo._id)" role="button">
+            <div>X</div>
           </div>
         </div>
       </div>

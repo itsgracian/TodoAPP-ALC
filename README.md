@@ -1,6 +1,8 @@
 # TodoAPP-ALC
 Angular Todos Application
 
+## App Screenshot
+![Screen Shot 2019-08-31 at 01 00 08](https://user-images.githubusercontent.com/27460888/64055142-09fd5200-cb8b-11e9-8f67-8fd621e64b19.png)
 
 ## Development server
 

@@ -79,7 +79,7 @@
 .App-todos-right .Todos-display .list {
   border: 1px solid #ccc;
   min-height: 40px;
-  border-left: 5px solid blue;
+  border-left: 5px solid black;
   border-radius: 3px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -107,4 +107,15 @@
   align-items: center;
   font-weight: bold;
   font-size: 25px;
+}
+.not-found-todo{
+  text-align: center;
+}
+.display-error {
+  margin-top: 10px;
+  color: #ff6060;
+}
+.not-available{
+  width: 80px;
+  margin-bottom: 50px;
 }
