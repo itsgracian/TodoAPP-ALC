@@ -1,0 +1,110 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.App .intro {
+  color: #fff;
+  text-align: center;
+}
+.App input {
+  height: 45px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding-left: 5px;
+  text-transform: capitalize;
+  border-radius: 3px;
+  font-family: "Space Mono", monospace;
+}
+.App-todos-left {
+  background: linear-gradient(rgba(14, 29, 165, 0.75), rgba(13, 11, 23, 0.68)),
+    url("../../assets/images/back.png");
+  background-size: cover;
+}
+
+.App-todos-left,
+.App-todos-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.App-todos-left .logo {
+  width: 200px;
+  margin-bottom: 50px;
+}
+.App-inputs {
+  width: 50%;
+  text-align: center;
+}
+.App-inputs .form-inputs {
+  margin-bottom: 5px;
+}
+
+.App-inputs .form-inputs .input-control {
+  width: 100%;
+  height: 45px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.App-inputs .form-inputs .btn-submit {
+  background: #a50e65;
+  color: #fff;
+  border: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+::placeholder {
+  color: #fff;
+}
+
+.App-todos-right .Todos-display {
+  width: 100%;
+  text-align: center;
+}
+
+.App-todos-right .Todos-display .lists {
+  padding: 40px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.App-todos-right .Todos-display .list {
+  border: 1px solid #ccc;
+  min-height: 40px;
+  border-left: 5px solid blue;
+  border-radius: 3px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+  padding-left: 20px;
+  position: relative;
+  border-right: none;
+}
+.App-todos-right .Todos-display .list .todo-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ff0d98;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+}
